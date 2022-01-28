@@ -3,6 +3,14 @@
 file_extensions:
   - prisma
 scope: source.prisma
+
+variables:
+
+  field_types: |-
+    (?x:
+      String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes|Unsupported
+    )
+
 contexts:
 
   else_pop:
@@ -17,6 +25,24 @@ contexts:
     - include: primitives
     - include: generator
     - include: datasource
+    - include: model
+
+  model:
+    - match: \bmodel\b
+      scope: keyword.declaration.model.prisma
+      push:
+        - meta_model
+        - generator_body_start
+        - model_identifier
+
+  meta_model:
+    - meta_scope: meta.model.prisma
+    - include: immediately_pop
+
+  model_identifier:
+    - match: '[A-Za-z][A-Za-z0-9_]*'
+      scope: entity.name.model.prisma
+    - include: else_pop
 
   datasource:
     - match: \bdatasource\b
