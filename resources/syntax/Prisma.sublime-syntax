@@ -4,8 +4,46 @@ file_extensions:
   - prisma
 scope: source.prisma
 contexts:
+
+  else_pop:
+    - match: (?=\S)
+      pop: 1
+
+  immediately_pop:
+    - match: ''
+      pop: 1
+
   main:
     - include: primitives
+    - include: generator
+
+  generator:
+    - match: \bgenerator\b
+      scope: keyword.declaration.generator.prisma
+      push:
+        - meta_generator
+        - generator_body_start
+        - generator_identifier
+
+  meta_generator:
+    - meta_scope: meta.generator.prisma
+    - include: immediately_pop
+
+  generator_identifier:
+    - match: \w+
+      scope: entity.name.generator.prisma
+    - include: else_pop
+
+  generator_body_start:
+    - match: \{
+      scope: punctuation.section.block.begin.prisma
+      set: generator_body_end
+    - include: else_pop
+
+  generator_body_end:
+    - match: \}
+      scope: punctuation.section.block.end.prisma
+      pop: 1
 
   primitives:
     - include: single_quoted_string
