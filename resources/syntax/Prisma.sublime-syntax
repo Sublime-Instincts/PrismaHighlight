@@ -13,6 +13,19 @@ variables:
 
 contexts:
 
+  prototype:
+    - include: comment
+
+  comment:
+    - match: \/{2}
+      scope: punctuation.definition.comment.prisma
+      push: comment_body
+
+  comment_body:
+    - meta_scope: comment.line.prisma
+    - match: $
+      pop: 1
+
   else_pop:
     - match: (?=\S)
       pop: 1
