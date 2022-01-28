@@ -63,11 +63,20 @@ contexts:
       scope: punctuation.section.block.end.prisma
       pop: 1
     - include: primitives
+    - include: field_type
 
   model_identifier:
     - match: '[A-Za-z][A-Za-z0-9_]*'
       scope: entity.name.model.prisma
     - include: else_pop
+
+  field_type:
+    - match: ({{field_types}})(?:(\[)(\])|(\?))?
+      captures:
+        1: keyword.other.field.prisma
+        2: punctuation.definition.modifier.begin.prisma
+        3: punctuation.definition.modifier.end.prisma
+        4: punctuation.definition.modifier.prisma
 
   datasource:
     - match: \bdatasource\b
