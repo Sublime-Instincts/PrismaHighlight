@@ -45,12 +45,24 @@ contexts:
       scope: keyword.declaration.model.prisma
       push:
         - meta_model
-        - generator_body_start
+        - model_body_begin
         - model_identifier
 
   meta_model:
     - meta_scope: meta.model.prisma
     - include: immediately_pop
+
+  model_body_begin:
+    - match: \{
+      scope: punctuation.section.block.begin.prisma
+      set: model_body_end
+    - include: else_pop
+
+  model_body_end:
+    - match: \}
+      scope: punctuation.section.block.end.prisma
+      pop: 1
+    - include: primitives
 
   model_identifier:
     - match: '[A-Za-z][A-Za-z0-9_]*'
@@ -62,7 +74,7 @@ contexts:
       scope: keyword.declaration.datasource.prisma
       push:
         - meta_datasource
-        - generator_body_start
+        - generator_datasource_body_begin
         - datasource_identifier
 
   meta_datasource:
@@ -79,7 +91,7 @@ contexts:
       scope: keyword.declaration.generator.prisma
       push:
         - meta_generator
-        - generator_body_start
+        - generator_datasource_body_begin
         - generator_identifier
 
   meta_generator:
@@ -91,13 +103,13 @@ contexts:
       scope: entity.name.generator.prisma
     - include: else_pop
 
-  generator_body_start:
+  generator_datasource_body_begin:
     - match: \{
       scope: punctuation.section.block.begin.prisma
-      set: generator_body_end
+      set: generator_datasource_body_end
     - include: else_pop
 
-  generator_body_end:
+  generator_datasource_body_end:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
