@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+file_extensions:
+  - prisma
+scope: source.prisma
+contexts:
+  main:
+    - include: primitives
+
+  primitives:
+    - include: single_quoted_string
+    - include: double_quoted_string
+
+  single_quoted_string:
+    - match: \'
+      scope: punctuation.definition.string.begin.prisma
+      push: single_quoted_string_body
+
+  single_quoted_string_body:
+    - meta_scope: meta.string.prisma string.quoted.single.prisma
+    - match: \'
+      scope: punctuation.definition.string.end.prisma
+      pop: 1
+
+  double_quoted_string:
+    - match: \"
+      scope: punctuation.definition.string.begin.prisma
+      push: double_quoted_string_body
+
+  double_quoted_string_body:
+    - meta_scope: meta.string.prisma string.quoted.double.prisma
+    - match: \"
+      scope: punctuation.definition.string.end.prisma
+      pop: 1
