@@ -18,7 +18,7 @@ variables:
 
   attributes: |-
     (?x:
-      id|default|unique|index|relation|map|updatedAt|map
+      id|default|unique|index|relation|map|updatedAt|map|db
     )
 
 contexts:
@@ -51,10 +51,12 @@ contexts:
     - include: model
 
   attributes:
-    - match: (\@{1,2})({{attributes}})
+    - match: (\@{1,2})({{attributes}})(?:(\.)(\w+))?
       captures:
         1: punctuation.definition.annotation.prisma
         2: variable.annotation.prisma
+        3: punctuation.accessor.dot.prisma
+        4: variable.annotation.prisma
       push: maybe_attributes_body
 
   maybe_attributes_body:
@@ -71,6 +73,7 @@ contexts:
     - match: \)
       scope: punctuation.section.block.end.prisma
       pop: 1
+    - include: primitives
 
   model:
     - match: \bmodel\b
@@ -158,6 +161,14 @@ contexts:
     - include: primitives
 
   primitives:
+    - include: string
+    - include: number
+
+  number:
+    - match: \d+
+      scope: meta.number.integer.decimal.prisma constant.numeric.prisma
+
+  string:
     - include: single_quoted_string
     - include: double_quoted_string
 
@@ -171,6 +182,7 @@ contexts:
     - match: \'
       scope: punctuation.definition.string.end.prisma
       pop: 1
+    - include: string_escapes
 
   double_quoted_string:
     - match: \"
@@ -182,3 +194,8 @@ contexts:
     - match: \"
       scope: punctuation.definition.string.end.prisma
       pop: 1
+    - include: string_escapes
+
+  string_escapes:
+    - match: \\['"]
+      scope: constant.character.escape.prisma
