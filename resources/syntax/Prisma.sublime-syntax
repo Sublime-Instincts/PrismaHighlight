@@ -11,6 +11,16 @@ variables:
       String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes|Unsupported
     )
 
+  attribute_functions: |-
+    (?x:
+      autoincrement|cuid|uuid|now|dbgenerated
+    )
+
+  attributes: |-
+    (?x:
+      id|default|unique|index|relation|map|updatedAt|map
+    )
+
 contexts:
 
   prototype:
@@ -40,6 +50,28 @@ contexts:
     - include: datasource
     - include: model
 
+  attributes:
+    - match: (\@{1,2})({{attributes}})
+      captures:
+        1: punctuation.definition.annotation.prisma
+        2: variable.annotation.prisma
+      push: maybe_attributes_body
+
+  maybe_attributes_body:
+    - match: (?=\()
+      set: attributes_body_start
+    - include: else_pop
+
+  attributes_body_start:
+    - match: \(
+      scope: punctuation.section.block.begin.prisma
+      set: attributes_body_end
+
+  attributes_body_end:
+    - match: \)
+      scope: punctuation.section.block.end.prisma
+      pop: 1
+
   model:
     - match: \bmodel\b
       scope: keyword.declaration.model.prisma
@@ -62,8 +94,9 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
-    - include: primitives
+    - include: attributes
     - include: field_type
+    - include: primitives
 
   model_identifier:
     - match: '[A-Za-z][A-Za-z0-9_]*'
