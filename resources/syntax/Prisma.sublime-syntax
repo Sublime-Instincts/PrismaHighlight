@@ -49,6 +49,35 @@ contexts:
     - include: generator
     - include: datasource
     - include: model
+    - include: enum
+
+  enum:
+    - match: \benum\b
+      scope: keyword.declaration.enum.prisma
+      push:
+        - meta_enum
+        - enum_body_begin
+        - enum_identifier
+
+  meta_enum:
+    - meta_scope: meta.enum.prisma
+    - include: immediately_pop
+
+  enum_body_begin:
+    - match: \{
+      scope: punctuation.section.block.begin.prisma
+      set: enum_body_end
+    - include: else_pop
+
+  enum_body_end:
+    - match: \}
+      scope: punctuation.section.block.end.prisma
+      pop: 1
+
+  enum_identifier:
+    - match: '[A-Za-z][A-Za-z0-9_]*'
+      scope: entity.name.enum.prisma
+    - include: else_pop
 
   attributes:
     - match: (\@{1,2})({{attributes}})(?:(\.)(\w+))?
