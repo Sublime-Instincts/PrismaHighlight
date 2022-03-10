@@ -1,0 +1,8 @@
+// SYNTAX TEST "Packages/Prisma/resources/syntax/Prisma.sublime-syntax"
+
+    enum Roles {  }
+//  ^^^^^^^^^^^^^^^ meta.enum.prisma
+//  ^^^^ keyword.declaration.enum.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma

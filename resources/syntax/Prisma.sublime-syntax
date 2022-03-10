@@ -73,12 +73,14 @@ contexts:
     - include: immediately_pop
 
   enum_body_begin:
+    - meta_scope: meta.block.prisma
     - match: \{
       scope: punctuation.section.block.begin.prisma
       set: enum_body_end
     - include: else_pop
 
   enum_body_end:
+    - meta_scope: meta.block.prisma
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
@@ -132,6 +134,7 @@ contexts:
     - include: else_pop
 
   model_body_end:
+    - meta_scope: meta.block.prisma
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
