@@ -21,6 +21,15 @@ variables:
       id|default|unique|index|relation|map|updatedAt|map|db
     )
 
+  illegal_model_names: |-
+    (?x:
+      PrismaClient|Prisma|break|case|catch|class|const|continue|debugger
+      |default|delete|do|else|enum|export|extends|false|finally|for|function|if
+      |implements|import|in|instanceof|interface|let|new|null|package|private
+      |protected|public|return|super|switch|this|throw|true|try|typeof|var|void
+      |while|with|yield|
+    )
+
 contexts:
 
   prototype:
@@ -132,6 +141,8 @@ contexts:
     - include: field
 
   model_identifier:
+    - match: '\b{{illegal_model_names}}\b'
+      scope: invalid.illegal.model-name.prisma
     - match: '[A-Za-z][A-Za-z0-9_]*'
       scope: entity.name.model.prisma
     - include: else_pop
