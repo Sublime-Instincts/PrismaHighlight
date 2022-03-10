@@ -163,6 +163,21 @@ contexts:
   primitives:
     - include: string
     - include: number
+    - include: list
+
+  list:
+    - match: \[
+      scope: punctuation.section.sequence.begin.prisma
+      push: list_body
+
+  list_body:
+    - meta_scope: meta.sequence.list.prisma
+    - match: \]
+      scope: punctuation.section.sequence.end.prisma
+      pop: 1
+    - include: string
+    - match: \,
+      scope: punctuation.separator.sequence.prisma
 
   number:
     - match: \d+
