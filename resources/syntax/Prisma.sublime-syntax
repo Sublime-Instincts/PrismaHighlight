@@ -100,6 +100,7 @@ contexts:
     - include: attributes
     - include: field_type
     - include: primitives
+    - include: field
 
   model_identifier:
     - match: '[A-Za-z][A-Za-z0-9_]*'
@@ -113,6 +114,22 @@ contexts:
         2: punctuation.definition.modifier.begin.prisma
         3: punctuation.definition.modifier.end.prisma
         4: punctuation.definition.modifier.prisma
+
+  field:
+    - match: \b\w+\b
+      scope: variable.other.prisma
+      push:
+        - primitives_else_pop
+        - field_intializer
+
+  field_intializer:
+    - match: \=
+      scope: keyword.operator.assignment.prisma
+    - include: else_pop
+
+  primitives_else_pop:
+    - include: primitives
+    - include: else_pop
 
   datasource:
     - match: \bdatasource\b
@@ -158,6 +175,7 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
+    - include: field
     - include: primitives
 
   primitives:
