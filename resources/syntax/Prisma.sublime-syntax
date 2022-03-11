@@ -51,6 +51,10 @@ contexts:
     - match: $
       pop: 1
 
+  eol_pop_2:
+    - match: (?=\n)
+      pop: 2
+
   else_pop:
     - match: (?=\S)
       pop: 1
@@ -178,15 +182,27 @@ contexts:
       scope: variable.other.prisma
       push:
         - attributes
-        - model_field_type
+        - model_field_relation_type
+        - model_field_scalar_type
 
-  model_field_type:
+  model_field_relation_type:
+    - match: ({{identifier}})(?:(\[)(\])|(\?))?
+      captures:
+        1: support.class.prisma
+        2: punctuation.definition.modifier.begin.prisma
+        3: punctuation.definition.modifier.end.prisma
+        4: punctuation.definition.modifier.prisma
+    - include: eol_pop_2
+    - include: else_pop
+
+  model_field_scalar_type:
     - match: ({{field_types}})(?:(\[)(\])|(\?))?
       captures:
         1: keyword.other.field.prisma
         2: punctuation.definition.modifier.begin.prisma
         3: punctuation.definition.modifier.end.prisma
         4: punctuation.definition.modifier.prisma
+    - include: eol_pop_2
     - include: else_pop
 
   field:
