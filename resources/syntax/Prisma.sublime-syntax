@@ -254,9 +254,10 @@ contexts:
     - include: primitives
 
   primitives:
+    - include: list
     - include: string
     - include: number
-    - include: list
+    - include: boolean
 
   list:
     - match: \[
@@ -307,3 +308,7 @@ contexts:
   string_escapes:
     - match: \\['"]
       scope: constant.character.escape.prisma
+
+  boolean:
+    - match: \b(true|false)\b
+      scope: constant.language.boolean.prisma
