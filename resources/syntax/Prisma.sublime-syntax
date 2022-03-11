@@ -6,6 +6,7 @@ scope: source.prisma
 
 variables:
 
+  identifier: '[A-Za-z][A-Za-z0-9_]*'
   field_types: |-
     (?x:
       String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes|Unsupported
@@ -86,7 +87,7 @@ contexts:
       pop: 1
 
   enum_identifier:
-    - match: '[A-Za-z][A-Za-z0-9_]*'
+    - match: '{{identifier}}'
       scope: entity.name.enum.prisma
     - include: else_pop
 
@@ -98,6 +99,7 @@ contexts:
         3: punctuation.accessor.dot.prisma
         4: variable.annotation.prisma
       push: maybe_attributes_body
+    - include: else_pop
 
   maybe_attributes_body:
     - match: (?=\()
@@ -113,6 +115,7 @@ contexts:
     - match: \)
       scope: punctuation.section.block.end.prisma
       pop: 1
+    - include: function
     - include: primitives
 
   model:
@@ -138,25 +141,31 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
-    - include: attributes
-    - include: field_type
+    - include: model_field
     - include: primitives
-    - include: field
 
   model_identifier:
     - match: '\b{{illegal_model_names}}\b'
       scope: invalid.illegal.model-name.prisma
-    - match: '[A-Za-z][A-Za-z0-9_]*'
+    - match: '{{identifier}}'
       scope: entity.name.model.prisma
     - include: else_pop
 
-  field_type:
+  model_field:
+    - match: '{{identifier}}'
+      scope: variable.other.prisma
+      push:
+        - attributes
+        - model_field_type
+
+  model_field_type:
     - match: ({{field_types}})(?:(\[)(\])|(\?))?
       captures:
         1: keyword.other.field.prisma
         2: punctuation.definition.modifier.begin.prisma
         3: punctuation.definition.modifier.end.prisma
         4: punctuation.definition.modifier.prisma
+    - include: else_pop
 
   field:
     - match: \b\w+\b
