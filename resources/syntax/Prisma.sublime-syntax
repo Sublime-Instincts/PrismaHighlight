@@ -31,6 +31,11 @@ variables:
       |while|with|yield|
     )
 
+  functions: |-
+    (?x:
+      auto(?:increment)?|cuid|uuid|now|dbgenerated|env
+    )
+
 contexts:
 
   prototype:
@@ -60,6 +65,23 @@ contexts:
     - include: datasource
     - include: model
     - include: enum
+
+  function:
+    - match: '{{functions}}'
+      scope: support.function.prisma
+      push:
+        - function_body_start
+
+  function_body_start:
+    - match: \(
+      scope: punctuation.section.group.begin.prisma
+      set: function_body_end
+
+  function_body_end:
+    - match: \)
+      scope: punctuation.section.group.end.prisma
+      pop: 1
+    - include: primitives
 
   enum:
     - match: \benum\b
@@ -227,6 +249,7 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
+    - include: function
     - include: field
     - include: primitives
 
