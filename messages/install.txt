@@ -1,0 +1,35 @@
+  _____      _                     _    _ _       _     _ _       _     _
+ |  __ \    (_)                   | |  | (_)     | |   | (_)     | |   | |
+ | |__) | __ _ ___ _ __ ___   __ _| |__| |_  __ _| |__ | |_  __ _| |__ | |_
+ |  ___/ '__| / __| '_ ` _ \ / _` |  __  | |/ _` | '_ \| | |/ _` | '_ \| __|
+ | |   | |  | \__ \ | | | | | (_| | |  | | | (_| | | | | | | (_| | | | | |_
+ |_|   |_|  |_|___/_| |_| |_|\__,_|_|  |_|_|\__, |_| |_|_|_|\__, |_| |_|\__|
+                                             __/ |           __/ |
+                                            |___/           |___/
+============================================================================
+
+PrismaHighlight is an enhanced syntax highlighting package for Prisma schema
+files for Sublime Text.
+
+Quick start
+-----------
+
+If you are seeing this messages, that means you have already installed PrismaHighlight,
+which means any of your prisma files will already be receiving syntax highlighting.
+
+The following file extensions are supported :-
+    - .prisma
+
+Having Problems ?
+-----------------
+
+If you encounter any problems with PrismaHighlight, or you think that it can be
+improved to make your work easier, please log an issue on the issue tracker:
+
+    https://github.com/Sublime-Instincts/PrismaHighlight/issues
+
+Get in Touch
+------------
+
+PrismaHighlight is developed & maintained by Ashwin Shenoy. If you have any feedback
+regarding PrismaHighlight, just send a mail on ashwinshenoy05@gmail.com
