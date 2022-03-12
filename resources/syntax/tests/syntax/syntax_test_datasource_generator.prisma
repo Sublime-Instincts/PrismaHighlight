@@ -1,0 +1,29 @@
+// SYNTAX TEST "Packages/Prisma/resources/syntax/Prisma.sublime-syntax"
+
+    generator client {  }
+//  ^^^^^^^^^^^^^^^^^^^^^ meta.generator.prisma
+//            ^^^^^^ entity.name.generator.prisma
+//                   ^^^^ meta.block.prisma
+//                   ^ punctuation.section.block.begin.prisma
+//                      ^ punctuation.section.block.end.prisma
+
+    generator client {
+//  ^^^^^^^^^^^^^^^^^^^ meta.generator.prisma
+//  ^^^^^^^^^ keyword.declaration.generator.prisma
+//            ^^^^^^ entity.name.generator.prisma
+//                   ^ meta.block.prisma punctuation.section.block.begin.prisma
+        provider = "prisma-client-js"
+//      ^^^^^^^^ variable.other.prisma
+//               ^ keyword.operator.assignment.prisma
+//                 ^^^^^^^^^^^^^^^^^^ meta.string.prisma string.quoted.double.prisma
+//                 ^ punctuation.definition.string.begin.prisma
+//                                  ^ punctuation.definition.string.end.prisma
+        binaryTargets = ["debian-openssl-1.1.x"]
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^ keyword.operator.assignment.prisma
+//                      ^^^^^^^^^^^^^^^^^^^^^^^^  meta.sequence.list.prisma
+//                      ^ punctuation.section.sequence.begin.prisma
+//                       ^^^^^^^^^^^^^^^^^^^^^^ meta.string.prisma string.quoted.double.prisma
+//                                             ^ punctuation.section.sequence.end.prisma
+    }
+//  ^ meta.generator.prisma meta.block.prisma punctuation.section.block.end.prisma

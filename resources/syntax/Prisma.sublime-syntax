@@ -263,6 +263,7 @@ contexts:
     - include: else_pop
 
   generator_datasource_body_end:
+    - meta_scope: meta.block.prisma
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
