@@ -1,0 +1,345 @@
+// SYNTAX TEST "Packages/Prisma/resources/syntax/Prisma.sublime-syntax"
+
+    model User {  }
+//  ^^^^^^^^^^^^^^^ meta.model.prisma
+//  ^^^^^ keyword.declaration.model.prisma
+//        ^^^^ entity.name.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+
+    model User {
+//  ^^^^^^^^^^^^^ meta.model.prisma
+//  ^^^^^ keyword.declaration.model.prisma
+//        ^^^^ entity.name.model.prisma
+//             ^ meta.block.prisma punctuation.section.block.begin.prisma
+        created_at DateTime
+//      ^^^^^^^^^^ variable.other.prisma
+//                 ^^^^^^^^ keyword.other.field.prisma
+        updated_at DateTime
+//      ^^^^^^^^^^ variable.other.prisma
+//                 ^^^^^^^^ keyword.other.field.prisma
+    }
+//  ^ meta.block.prisma punctuation.section.block.end.prisma
+
+    model Prisma {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model PrismaClient {  }
+//  ^^^^^ meta.model.prisma
+//                     ^^^^ meta.block.prisma
+//                     ^ punctuation.section.block.begin.prisma
+//                        ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model break {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model case {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model catch {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model class {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model const {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model continue {  }
+//  ^^^^^ meta.model.prisma
+//                 ^^^^ meta.block.prisma
+//                 ^ punctuation.section.block.begin.prisma
+//                    ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model debugger {  }
+//  ^^^^^ meta.model.prisma
+//                 ^^^^ meta.block.prisma
+//                 ^ punctuation.section.block.begin.prisma
+//                    ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model default {  }
+//  ^^^^^ meta.model.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+//        ^^^^^^^ invalid.illegal.model-name.prisma
+
+    model delete {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model do {  }
+//  ^^^^^ meta.model.prisma
+//           ^^^^ meta.block.prisma
+//           ^ punctuation.section.block.begin.prisma
+//              ^ punctuation.section.block.end.prisma
+//        ^^ invalid.illegal.model-name.prisma
+
+    model else {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model enum {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model export {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model extends {  }
+//  ^^^^^ meta.model.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+//        ^^^^^^^ invalid.illegal.model-name.prisma
+
+    model false {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model finally {  }
+//  ^^^^^ meta.model.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+//        ^^^^^^^ invalid.illegal.model-name.prisma
+
+    model for {  }
+//  ^^^^^ meta.model.prisma
+//            ^^^^ meta.block.prisma
+//            ^ punctuation.section.block.begin.prisma
+//               ^ punctuation.section.block.end.prisma
+//        ^^^ invalid.illegal.model-name.prisma
+
+    model function {  }
+//  ^^^^^ meta.model.prisma
+//                 ^^^^ meta.block.prisma
+//                 ^ punctuation.section.block.begin.prisma
+//                    ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model if {  }
+//  ^^^^^ meta.model.prisma
+//           ^^^^ meta.block.prisma
+//           ^ punctuation.section.block.begin.prisma
+//              ^ punctuation.section.block.end.prisma
+//        ^^ invalid.illegal.model-name.prisma
+
+    model implements {  }
+//  ^^^^^ meta.model.prisma
+//                   ^^^^ meta.block.prisma
+//                   ^ punctuation.section.block.begin.prisma
+//                      ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model import {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model in {  }
+//  ^^^^^ meta.model.prisma
+//           ^^^^ meta.block.prisma
+//           ^ punctuation.section.block.begin.prisma
+//              ^ punctuation.section.block.end.prisma
+//        ^^ invalid.illegal.model-name.prisma
+
+    model instanceof {  }
+//  ^^^^^ meta.model.prisma
+//                   ^^^^ meta.block.prisma
+//                   ^ punctuation.section.block.begin.prisma
+//                      ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model interface {  }
+//  ^^^^^ meta.model.prisma
+//                  ^^^^ meta.block.prisma
+//                  ^ punctuation.section.block.begin.prisma
+//                     ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model let {  }
+//  ^^^^^ meta.model.prisma
+//            ^^^^ meta.block.prisma
+//            ^ punctuation.section.block.begin.prisma
+//               ^ punctuation.section.block.end.prisma
+//        ^^^ invalid.illegal.model-name.prisma
+
+    model new {  }
+//  ^^^^^ meta.model.prisma
+//            ^^^^ meta.block.prisma
+//            ^ punctuation.section.block.begin.prisma
+//               ^ punctuation.section.block.end.prisma
+//        ^^^ invalid.illegal.model-name.prisma
+
+    model null {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model package {  }
+//  ^^^^^ meta.model.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+//        ^^^^^^^ invalid.illegal.model-name.prisma
+
+    model private {  }
+//  ^^^^^ meta.model.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+//        ^^^^^^^ invalid.illegal.model-name.prisma
+
+    model protected {  }
+//  ^^^^^ meta.model.prisma
+//                  ^^^^ meta.block.prisma
+//                  ^ punctuation.section.block.begin.prisma
+//                     ^ punctuation.section.block.end.prisma
+//        ^^^^^^^^^ invalid.illegal.model-name.prisma
+
+    model public {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model return {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model super {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model switch {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model this {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model throw {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model true {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model try {  }
+//  ^^^^^ meta.model.prisma
+//            ^^^^ meta.block.prisma
+//            ^ punctuation.section.block.begin.prisma
+//               ^ punctuation.section.block.end.prisma
+//        ^^^ invalid.illegal.model-name.prisma
+
+    model typeof {  }
+//  ^^^^^ meta.model.prisma
+//               ^^^^ meta.block.prisma
+//               ^ punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+//        ^^^^^^ invalid.illegal.model-name.prisma
+
+    model var {  }
+//  ^^^^^ meta.model.prisma
+//            ^^^^ meta.block.prisma
+//            ^ punctuation.section.block.begin.prisma
+//               ^ punctuation.section.block.end.prisma
+//        ^^^ invalid.illegal.model-name.prisma
+
+    model void {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model while {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
+
+    model with {  }
+//  ^^^^^ meta.model.prisma
+//             ^^^^ meta.block.prisma
+//             ^ punctuation.section.block.begin.prisma
+//                ^ punctuation.section.block.end.prisma
+//        ^^^^ invalid.illegal.model-name.prisma
+
+    model yield {  }
+//  ^^^^^ meta.model.prisma
+//              ^^^^ meta.block.prisma
+//              ^ punctuation.section.block.begin.prisma
+//                 ^ punctuation.section.block.end.prisma
+//        ^^^^^ invalid.illegal.model-name.prisma
