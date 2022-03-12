@@ -19,7 +19,7 @@ variables:
 
   attributes: |-
     (?x:
-      id|default|unique|index|relation|map|updatedAt|map|db
+      id|default|unique|index|relation|map|updatedAt|map|db|ignore
     )
 
   illegal_model_names: |-
@@ -169,6 +169,7 @@ contexts:
       pop: 1
     - include: model_field
     - include: primitives
+    - include: attributes
 
   model_identifier:
     - match: '\b{{illegal_model_names}}\b'
