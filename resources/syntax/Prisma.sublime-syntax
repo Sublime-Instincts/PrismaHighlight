@@ -12,11 +12,6 @@ variables:
       String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes|Unsupported
     )
 
-  attribute_functions: |-
-    (?x:
-      autoincrement|cuid|uuid|now|dbgenerated
-    )
-
   attributes: |-
     (?x:
       id|default|unique|index|relation|map|updatedAt|map|db|ignore
