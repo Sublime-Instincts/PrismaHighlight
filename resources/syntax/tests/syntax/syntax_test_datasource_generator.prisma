@@ -2,6 +2,7 @@
 
     generator client {  }
 //  ^^^^^^^^^^^^^^^^^^^^^ meta.generator.prisma
+//  ^^^^^^^^^ keyword.declaration.generator.prisma
 //            ^^^^^^ entity.name.generator.prisma
 //                   ^^^^ meta.block.prisma
 //                   ^ punctuation.section.block.begin.prisma
@@ -27,3 +28,26 @@
 //                                             ^ punctuation.section.sequence.end.prisma
     }
 //  ^ meta.generator.prisma meta.block.prisma punctuation.section.block.end.prisma
+
+    datasource db {  }
+//  ^^^^^^^^^^^^^^^^^^ meta.datasource.prisma
+//  ^^^^^^^^^^ keyword.declaration.datasource.prisma
+//             ^^ entity.name.datasource.prisma
+//                ^^^^ meta.block.prisma
+//                ^ punctuation.section.block.begin.prisma
+//                   ^ punctuation.section.block.end.prisma
+
+    datasource db {
+//  ^^^^^^^^^^^^^^^ meta.datasource.prisma
+//  ^^^^^^^^^^ keyword.declaration.datasource.prisma
+//             ^^ entity.name.datasource.prisma
+//                ^ meta.block.prisma punctuation.section.block.begin.prisma
+        provider = "sqlite"
+//      ^^^^^^^^^^^^^^^^^^^ meta.datasource.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.prisma
+//               ^ keyword.operator.assignment.prisma
+//                 ^^^^^^^^ meta.string.prisma string.quoted.double.prisma
+//                 ^ punctuation.definition.string.begin.prisma
+//                        ^ punctuation.definition.string.end.prisma
+        url = env("DATABASE_URL")
+    }
