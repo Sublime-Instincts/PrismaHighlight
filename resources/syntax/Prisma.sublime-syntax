@@ -202,6 +202,22 @@ contexts:
       pop: 1
     - include: function
     - include: primitives
+    - include: attribute_argument
+
+  attribute_argument:
+    - match: '{{identifier}}'
+      scope: variable.parameter.prisma
+      push:
+        - primitives_else_pop
+        - attribute_argument_assignment
+    - match: \,
+      scope: punctuation.separator.comma.prisma
+    - include: else_pop
+
+  attribute_argument_assignment:
+    - match: ':'
+      scope: keyword.operator.assignment.prisma
+    - include: else_pop
 
   model:
     - match: \b(model)\b
