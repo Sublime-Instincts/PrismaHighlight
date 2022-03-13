@@ -1,0 +1,29 @@
+// SYNTAX TEST "Packages/Prisma/resources/syntax/Prisma.sublime-syntax"
+
+    type Address {  }
+//  ^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//  ^^^^ keyword.declaration.type.prisma
+//       ^^^^^^^ entity.name.type.prisma
+//               ^ meta.block.prisma punctuation.section.block.begin.prisma
+//                  ^ punctuation.section.block.end.prisma
+
+    type Photo {
+//  ^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//  ^^^^ keyword.declaration.type.prisma
+//       ^^^^^ entity.name.type.prisma
+//             ^ meta.block.prisma punctuation.section.block.begin.prisma
+        height Int @default(200)
+//      ^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^ variable.other.type.prisma
+//             ^^^ keyword.other.field.prisma
+//                 ^ punctuation.definition.annotation.prisma
+//                  ^^^^^^^ variable.annotation.prisma
+//                         ^ punctuation.section.block.begin.prisma
+//                          ^^^ meta.number.integer.decimal.prisma constant.numeric.prisma
+//                             ^ punctuation.section.block.end.prisma
+        url String
+//      ^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^ variable.other.type.prisma
+//          ^^^^^^ keyword.other.field.prisma
+    }
+//  ^ meta.type.prisma meta.block.prisma punctuation.section.block.end.prisma
