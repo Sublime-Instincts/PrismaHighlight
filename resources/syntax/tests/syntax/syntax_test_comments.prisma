@@ -1,0 +1,7 @@
+// SYNTAX TEST "Packages/Prisma/resources/syntax/Prisma.sublime-syntax"
+
+
+// ^ source.prisma
+
+    //
+//  ^^ comment.line.prisma punctuation.definition.comment.prisma
