@@ -10,7 +10,7 @@ variables:
   identifier: '[A-Za-z][A-Za-z0-9_]*'
   field_types: |-
     (?x:
-      String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes|Unsupported
+      String|Boolean|Int|BigInt|Float|Decimal|DateTime|Json|Bytes
     )
 
   attributes: |-
@@ -199,12 +199,12 @@ contexts:
 
   attributes_body_start:
     - match: \(
-      scope: punctuation.section.block.begin.prisma
+      scope: punctuation.section.arguments.begin.prisma
       set: attributes_body_end
 
   attributes_body_end:
     - match: \)
-      scope: punctuation.section.block.end.prisma
+      scope: punctuation.section.arguments.end.prisma
       pop: 1
     - include: function
     - include: primitives
@@ -278,6 +278,11 @@ contexts:
     - include: else_pop
 
   model_field_scalar_type:
+    - match: \b(Unsupported)\b(\()
+      captures:
+        1: keyword.other.field.prisma
+        2: punctuation.section.field.begin.prisma
+      set: unsupported_body
     - match: ({{field_types}})(?:(\[)(\])|(\?))?
       captures:
         1: keyword.other.field.prisma
@@ -286,6 +291,13 @@ contexts:
         4: punctuation.definition.modifier.prisma
     - include: eol_pop_2
     - include: else_pop
+
+  unsupported_body:
+    - meta_scope: meta.field.prisma
+    - match: \)
+      scope: punctuation.section.field.end.prisma
+      pop: 1
+    - include: string
 
   field:
     - match: \b\w+\b

@@ -18,9 +18,9 @@
 //             ^^^ keyword.other.field.prisma
 //                 ^ punctuation.definition.annotation.prisma
 //                  ^^^^^^^ variable.annotation.prisma
-//                         ^ punctuation.section.block.begin.prisma
+//                         ^ punctuation.section.arguments.begin.prisma
 //                          ^^^ meta.number.integer.decimal.prisma constant.numeric.prisma
-//                             ^ punctuation.section.block.end.prisma
+//                             ^ punctuation.section.arguments.end.prisma
         url String
 //      ^^^^^^^^^^ meta.type.prisma meta.block.prisma
 //      ^^^ variable.other.type.prisma
