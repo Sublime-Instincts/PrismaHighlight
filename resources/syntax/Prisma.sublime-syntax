@@ -39,9 +39,20 @@ variables:
 contexts:
 
   prototype:
-    - include: comment
+    - include: documentation_comment
+    - include: line_comment
 
-  comment:
+  documentation_comment:
+    - match: \/{3}
+      scope: punctuation.definition.comment.prisma
+      push: documentation_comment_body
+
+  documentation_comment_body:
+    - meta_scope: comment.block.documentation.prisma
+    - match: $
+      pop: 1
+
+  line_comment:
     - match: \/{2}
       scope: punctuation.definition.comment.prisma
       push: comment_body

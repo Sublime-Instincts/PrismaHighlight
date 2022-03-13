@@ -3,5 +3,10 @@
 
 // ^ source.prisma
 
-    //
-//  ^^ comment.line.prisma punctuation.definition.comment.prisma
+    // This is a line comment
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.prisma
+//  ^^ punctuation.definition.comment.prisma
+
+    /// This is a documentation comment
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.documentation.prisma
+//  ^^^punctuation.definition.comment.prisma
