@@ -3,6 +3,7 @@
 file_extensions:
   - prisma
 scope: source.prisma
+version: 2
 
 variables:
 
