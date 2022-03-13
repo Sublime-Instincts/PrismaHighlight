@@ -351,6 +351,7 @@ contexts:
     - include: string
     - include: number
     - include: boolean
+    - include: operator
 
   list:
     - match: \[
@@ -401,6 +402,10 @@ contexts:
   string_escapes:
     - match: \\['"]
       scope: constant.character.escape.prisma
+
+  operator:
+    - match: ([+-])
+      scope: keyword.operator.arithmetic.prisma
 
   boolean:
     - match: \b(true|false)\b
