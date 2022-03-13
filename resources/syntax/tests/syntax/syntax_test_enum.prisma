@@ -6,3 +6,17 @@
 //             ^^^^ meta.block.prisma
 //             ^ punctuation.section.block.begin.prisma
 //                ^ punctuation.section.block.end.prisma
+
+    enum Roles {
+//  ^^^^^^^^^^^^ meta.enum.prisma meta.block.prisma
+//  ^^^^ keyword.declaration.enum.prisma
+//       ^^^^^ entity.name.enum.prisma
+//             ^ meta.block.prisma punctuation.section.block.begin.prisma
+        ADMIN
+//      ^^^^^ meta.enum.prisma meta.block.prisma
+//      ^^^^^ variable.other.enum.prisma
+        USER
+//      ^^^^ meta.enum.prisma meta.block.prisma
+//      ^^^^ variable.other.enum.prisma
+    }
+//  ^ meta.enum.prisma meta.block.prisma punctuation.section.block.end.prisma

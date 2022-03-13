@@ -124,6 +124,8 @@ contexts:
     - match: \}
       scope: punctuation.section.block.end.prisma
       pop: 1
+    - match: \b{{identifier}}\b
+      scope: variable.other.enum.prisma
 
   enum_identifier:
     - match: '{{identifier}}'
