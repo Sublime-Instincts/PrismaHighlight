@@ -50,4 +50,13 @@
 //                 ^ punctuation.definition.string.begin.prisma
 //                        ^ punctuation.definition.string.end.prisma
         url = env("DATABASE_URL")
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.datasource.prisma meta.block.prisma
+//      ^^^ variable.other.prisma
+//          ^ keyword.operator.assignment.prisma
+//            ^^^ meta.function-call.identifier.prisma support.function.prisma
+//               ^ meta.function-call.arguments.prisma punctuation.section.arguments.begin.prisma
+//                ^^^^^^^^^^^^^^ meta.string.prisma string.quoted.double.prisma
+//                ^ punctuation.definition.string.begin.prisma
+//                             ^ punctuation.definition.string.end.prisma
+//                              ^ punctuation.section.arguments.end.prisma
     }
