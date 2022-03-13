@@ -74,6 +74,7 @@ contexts:
     - include: datasource
     - include: model
     - include: enum
+    - include: composite_type
     - include: primitives
 
   function:
@@ -100,8 +101,51 @@ contexts:
       pop: 1
     - include: primitives
 
+  composite_type:
+    - match: \b(type)\b
+      scope: keyword.declaration.type.prisma
+      push:
+        - meta_composite_type
+        - composite_type_body_begin
+        - composite_type_identifier
+
+  meta_composite_type:
+    - meta_scope: meta.type.prisma
+    - include: immediately_pop
+
+  composite_type_body_begin:
+    - meta_scope: meta.block.prisma
+    - match: \{
+      scope: punctuation.section.block.begin.prisma
+      set: composite_type_body_end
+    - include: else_pop
+
+  composite_type_body_end:
+    - meta_scope: meta.block.prisma
+    - match: \}
+      scope: punctuation.section.block.end.prisma
+      pop: 1
+    - include: composite_type_field
+
+  composite_type_identifier:
+    - match: '{{identifier}}'
+      scope: entity.name.type.prisma
+    - include: else_pop
+
+  composite_type_field:
+    - match: '{{identifier}}'
+      scope: variable.other.type.prisma
+      push:
+        - attributes
+        - composite_scalar_types
+
+  composite_scalar_types:
+    - match: '{{field_types}}'
+      scope: keyword.other.field.prisma
+    - include: else_pop
+
   enum:
-    - match: \benum\b
+    - match: \b(enum)\b
       scope: keyword.declaration.enum.prisma
       push:
         - meta_enum
@@ -160,7 +204,7 @@ contexts:
     - include: primitives
 
   model:
-    - match: \bmodel\b
+    - match: \b(model)\b
       scope: keyword.declaration.model.prisma
       push:
         - meta_model
@@ -238,7 +282,7 @@ contexts:
     - include: else_pop
 
   datasource:
-    - match: \bdatasource\b
+    - match: \b(datasource)\b
       scope: keyword.declaration.datasource.prisma
       push:
         - meta_datasource
@@ -255,7 +299,7 @@ contexts:
     - include: else_pop
 
   generator:
-    - match: \bgenerator\b
+    - match: \b(generator)\b
       scope: keyword.declaration.generator.prisma
       push:
         - meta_generator
