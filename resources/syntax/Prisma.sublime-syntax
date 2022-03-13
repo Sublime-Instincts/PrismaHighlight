@@ -83,6 +83,10 @@ contexts:
       scope: support.function.prisma
       push:
         - possible_function_body_start
+    - match: '{{identifier}}(?=\()'
+      scope: variable.function.prisma meta.function-call.identifier.prisma
+      push:
+        - function_body_start
 
   possible_function_body_start:
     - meta_scope: meta.function-call.identifier.prisma
@@ -101,6 +105,7 @@ contexts:
       scope: punctuation.section.arguments.end.prisma
       pop: 1
     - include: primitives
+    - include: attribute_argument
 
   composite_type:
     - match: \b(type)\b
@@ -364,6 +369,7 @@ contexts:
     - match: \]
       scope: punctuation.section.sequence.end.prisma
       pop: 1
+    - include: function
     - include: string
     - match: \,
       scope: punctuation.separator.sequence.prisma
