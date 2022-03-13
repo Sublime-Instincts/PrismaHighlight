@@ -373,6 +373,8 @@ contexts:
     - include: string
     - match: \,
       scope: punctuation.separator.sequence.prisma
+    - match: '{{identifier}}'
+      scope: variable.other.model.prisma
 
   number:
     - match: \d+
