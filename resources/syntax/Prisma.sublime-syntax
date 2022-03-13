@@ -31,7 +31,7 @@ variables:
       |while|with|yield|
     )
 
-  functions: |-
+  builtin_functions: |-
     (?x:
       auto(?:increment)?|cuid|uuid|now|dbgenerated|env
     )
@@ -75,26 +75,34 @@ contexts:
       pop: 1
 
   main:
-    - include: primitives
     - include: generator
     - include: datasource
     - include: model
     - include: enum
+    - include: primitives
 
   function:
-    - match: '{{functions}}'
+    - match: '{{builtin_functions}}'
       scope: support.function.prisma
       push:
-        - function_body_start
+        - possible_function_body_start
+
+  possible_function_body_start:
+    - meta_scope: meta.function-call.identifier.prisma
+    - match: (?=\()
+      set: function_body_start
+    - include: else_pop
 
   function_body_start:
     - match: \(
-      scope: punctuation.section.group.begin.prisma
+      scope: punctuation.section.arguments.begin.prisma
       set: function_body_end
 
   function_body_end:
+    - clear_scopes: 1
+    - meta_scope: meta.function-call.arguments.prisma
     - match: \)
-      scope: punctuation.section.group.end.prisma
+      scope: punctuation.section.arguments.end.prisma
       pop: 1
     - include: primitives
 
