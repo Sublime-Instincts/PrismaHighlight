@@ -1,6 +1,6 @@
 # PrismaHighlight
 
-![LICENSE](https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge) ![Sublime Text](https://img.shields.io/badge/ST-Build%204126+-orange?style=for-the-badge&logo=sublime-text) ![Tag](https://img.shields.io/github/v/tag/Sublime-Instincts/PrismaHighlight?style=for-the-badge&logo=github&sort=semver) ![Downloads](https://img.shields.io/packagecontrol/dt/PrismaHighlight?style=for-the-badge)
+![LICENSE](https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge) ![Sublime Text](https://img.shields.io/badge/ST-Build%204126+-orange?style=for-the-badge&logo=sublime-text) ![Tag](https://img.shields.io/github/v/tag/Sublime-Instincts/PrismaHighlight?style=for-the-badge&logo=github&sort=semver)
 ![Syntax tests](https://img.shields.io/github/workflow/status/Sublime-Instincts/PrismaHighlight/syntax_test?color=green&label=Syntax%20Tests&logo=github&logoColor=white&style=for-the-badge)
 
 A Sublime Text package that offers enhanced syntax highlighting for [Prisma schema](https://www.prisma.io/docs/concepts/components/prisma-schema) files. Read more for the full documentation.
