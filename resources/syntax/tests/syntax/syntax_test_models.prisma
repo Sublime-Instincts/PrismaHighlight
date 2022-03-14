@@ -13,12 +13,92 @@
 //  ^^^^^ keyword.declaration.model.prisma
 //        ^^^^ entity.name.model.prisma
 //             ^ meta.block.prisma punctuation.section.block.begin.prisma
-        created_at DateTime
-//      ^^^^^^^^^^ variable.other.prisma
-//                 ^^^^^^^^ keyword.other.field.prisma
-        updated_at DateTime
-//      ^^^^^^^^^^ variable.other.prisma
-//                 ^^^^^^^^ keyword.other.field.prisma
+
+        test_column_1 Int
+//      ^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^ keyword.other.field.prisma
+
+        test_column_1 Boolean
+//      ^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^^^ keyword.other.field.prisma
+
+        test_column_1 String
+//      ^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^^ keyword.other.field.prisma
+
+        test_column_1 BigInt
+//      ^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^^ keyword.other.field.prisma
+
+        test_column_1 Float
+//      ^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^ keyword.other.field.prisma
+
+        test_column_1 Decimal
+//      ^^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^^^ keyword.other.field.prisma
+
+        test_column_1 DateTime
+//      ^^^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^^^^ keyword.other.field.prisma
+
+        test_column_1 Json
+//      ^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^ keyword.other.field.prisma
+
+        test_column_1 Bytes
+//      ^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^ keyword.other.field.prisma
+
+        test_column_1 Bytes?
+//      ^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^ keyword.other.field.prisma
+//                         ^ punctuation.definition.modifier.prisma
+
+        test_column_1 Bytes[]
+//      ^^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^^ keyword.other.field.prisma
+//                         ^ punctuation.definition.modifier.begin.prisma
+//                          ^ punctuation.definition.modifier.end.prisma
+
+        test_column_1 Int @id @default(autoincrement())
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^ keyword.other.field.prisma
+//                        ^ punctuation.definition.annotation.prisma
+//                         ^^ variable.annotation.prisma
+//                            ^ punctuation.definition.annotation.prisma
+//                             ^^^^^^^ variable.annotation.prisma
+//                                    ^ punctuation.section.arguments.begin.prisma
+//                                     ^^^^^^^^^^^^^ meta.function-call.identifier.prisma support.function.prisma
+//                                                  ^ meta.function-call.arguments.prisma punctuation.section.arguments.begin.prisma
+//                                                   ^ punctuation.section.arguments.end.prisma
+//                                                    ^ punctuation.section.arguments.end.prisma
+
+        test_column_1 User @id @default(autoincrement())
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.model.prisma meta.block.prisma
+//      ^^^^^^^^^^^^^ variable.other.prisma
+//                    ^^^^ support.class.prisma
+//                         ^ punctuation.definition.annotation.prisma
+//                          ^^ variable.annotation.prisma
+//                             ^ punctuation.definition.annotation.prisma
+//                              ^^^^^^^ variable.annotation.prisma
+//                                     ^ punctuation.section.arguments.begin.prisma
+//                                      ^^^^^^^^^^^^^ meta.function-call.identifier.prisma support.function.prisma
+//                                                   ^ meta.function-call.arguments.prisma punctuation.section.arguments.begin.prisma
+//                                                    ^^ punctuation.section.arguments.end.prisma
+
     }
 //  ^ meta.block.prisma punctuation.section.block.end.prisma
 
