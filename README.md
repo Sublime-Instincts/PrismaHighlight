@@ -5,6 +5,8 @@
 
 A Sublime Text package that offers enhanced syntax highlighting for [Prisma schema](https://www.prisma.io/docs/concepts/components/prisma-schema) files. Read more for the full documentation.
 
+[](./images/prisma_highlighting_example.png)
+
 ## Features
 
 - Enhanced syntax highlighting for prisma schema files.
