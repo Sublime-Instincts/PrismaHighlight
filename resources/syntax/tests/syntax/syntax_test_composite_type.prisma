@@ -12,18 +12,51 @@
 //  ^^^^ keyword.declaration.type.prisma
 //       ^^^^^ entity.name.type.prisma
 //             ^ meta.block.prisma punctuation.section.block.begin.prisma
-        height Int @default(200)
+        column_1 Int @default(200)
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^ keyword.other.field.prisma
+//                   ^ punctuation.definition.annotation.prisma
+//                    ^^^^^^^ variable.annotation.prisma
+//                           ^ punctuation.section.arguments.begin.prisma
+//                            ^^^ meta.number.integer.decimal.prisma constant.numeric.prisma
+//                               ^ punctuation.section.arguments.end.prisma
+
+        column_2 String
+//      ^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^^^^ keyword.other.field.prisma
+
+        column_3 Int[]
+//      ^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^ keyword.other.field.prisma
+//                  ^ punctuation.definition.modifier.begin.prisma
+//                   ^ punctuation.definition.modifier.end.prisma
+
+        column_4 Boolean?
+//      ^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^^^^^ keyword.other.field.prisma
+//                      ^ punctuation.definition.modifier.prisma
+
+        column_5 SomeOtherType
+//      ^^^^^^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^^^^^^^^^^^ support.class.prisma
+
+        column_6 SomeOtherTyoe[]
 //      ^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
-//      ^^^^^^ variable.other.type.prisma
-//             ^^^ keyword.other.field.prisma
-//                 ^ punctuation.definition.annotation.prisma
-//                  ^^^^^^^ variable.annotation.prisma
-//                         ^ punctuation.section.arguments.begin.prisma
-//                          ^^^ meta.number.integer.decimal.prisma constant.numeric.prisma
-//                             ^ punctuation.section.arguments.end.prisma
-        url String
-//      ^^^^^^^^^^ meta.type.prisma meta.block.prisma
-//      ^^^ variable.other.type.prisma
-//          ^^^^^^ keyword.other.field.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^^^^^^^^^^^ support.class.prisma
+//                            ^ punctuation.definition.modifier.begin.prisma
+//                             ^ punctuation.definition.modifier.end.prisma
+
+        column_7 SomeOtherType?
+//      ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.prisma meta.block.prisma
+//      ^^^^^^^^ variable.other.type.prisma
+//               ^^^^^^^^^^^^^ support.class.prisma
+//                            ^ punctuation.definition.modifier.prisma
+
     }
 //  ^ meta.type.prisma meta.block.prisma punctuation.section.block.end.prisma

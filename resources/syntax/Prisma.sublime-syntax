@@ -143,12 +143,8 @@ contexts:
       scope: variable.other.type.prisma
       push:
         - attributes
-        - composite_scalar_types
-
-  composite_scalar_types:
-    - match: '{{field_types}}'
-      scope: keyword.other.field.prisma
-    - include: else_pop
+        - field_relation_type
+        - field_scalar_type
 
   enum:
     - match: \b(enum)\b
@@ -264,10 +260,10 @@ contexts:
       scope: variable.other.prisma
       push:
         - attributes
-        - model_field_relation_type
-        - model_field_scalar_type
+        - field_relation_type
+        - field_scalar_type
 
-  model_field_relation_type:
+  field_relation_type:
     - match: ({{identifier}})(?:(\[)(\])|(\?))?
       captures:
         1: support.class.prisma
@@ -277,7 +273,7 @@ contexts:
     - include: eol_pop_2
     - include: else_pop
 
-  model_field_scalar_type:
+  field_scalar_type:
     - match: \b(Unsupported)\b(\()
       captures:
         1: keyword.other.field.prisma
