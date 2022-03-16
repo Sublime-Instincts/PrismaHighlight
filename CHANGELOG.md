@@ -9,3 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Syntax highlighting for `.prisma` files.
 - Quickly navigate through models, enums, types etc. defined in your schema files using `Goto Symbol`.
 - Ability to comment using the standard key bindings.
+
+## [1.0.1] - 2022-03-16
+### Fixed
+- Fix modifiers not being highlighted for data types in composite types.
+- Fix references of other composite types not being highlighted in composite types.
