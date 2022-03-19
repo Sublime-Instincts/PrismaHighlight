@@ -81,12 +81,10 @@ contexts:
   function:
     - match: '{{builtin_functions}}'
       scope: support.function.prisma
-      push:
-        - possible_function_body_start
+      push: possible_function_body_start
     - match: '{{identifier}}(?=\()'
       scope: variable.function.prisma meta.function-call.identifier.prisma
-      push:
-        - function_body_start
+      push: function_body_start
 
   possible_function_body_start:
     - meta_scope: meta.function-call.identifier.prisma
