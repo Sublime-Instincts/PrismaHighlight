@@ -1,0 +1,4 @@
+// SYNTAX TEST "Packages/PrismaHighlight/resources/syntax/Prisma.sublime-syntax"
+
+    model User { }
+//        @@@@ definition
