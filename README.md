@@ -16,9 +16,10 @@ A community Sublime Text package that offers enhanced syntax highlighting for [P
 ## Installation
 
 #### Package Control
-This package is not available on Package Control. To install it, use the following instructions.
 
-Once you have `Package Control` installed, use `Package Control: Add Repository` from the command palette. Copy the github url (without the `.git` at the end) and enter it into the input panel that pops up at the bottom when you select `Package Control: Add Repository`. Now use `Package Control: Install Package` and search for `PrismaHighlight` and install it.
+1. The recommended way is to use `Package Control: Install Package` from the command palette. Search for `Prisma` and hit <kbd>enter</kbd>. The package will be installed. Package Control will take care of auto updating the package as & when there are new tagged releases.
+
+2. Another way to install is to use `Package Control: Add Repository` from the command palette. Copy the github url (without the `.git` at the end) and enter it into the input panel that pops up at the bottom when you select `Package Control: Add Repository`. Now use `Package Control: Install Package` and search for `Prisma` and install it. This is **not the recommended way though**, as this will periodically pull changes from the `main/master` branch. So there are chances of features breaking.
 
 ## Documentation
 
