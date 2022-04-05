@@ -15,7 +15,7 @@ variables:
 
   attributes: |-
     (?x:
-      id|default|unique|index|relation|map|updatedAt|map|db|ignore
+      id|default|unique|index|relation|map|updatedAt|map|db|ignore|fulltext
     )
 
   illegal_model_names: |-
