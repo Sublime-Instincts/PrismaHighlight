@@ -396,6 +396,7 @@ contexts:
       push: single_quoted_string_body
 
   single_quoted_string_body:
+    - meta_include_prototype: false
     - meta_scope: meta.string.prisma string.quoted.single.prisma
     - match: \'
       scope: punctuation.definition.string.end.prisma
@@ -408,6 +409,7 @@ contexts:
       push: double_quoted_string_body
 
   double_quoted_string_body:
+    - meta_include_prototype: false
     - meta_scope: meta.string.prisma string.quoted.double.prisma
     - match: \"
       scope: punctuation.definition.string.end.prisma
