@@ -14,3 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix modifiers not being highlighted for data types in composite types.
 - Fix references of other composite types not being highlighted in composite types.
+
+## [1.1.0] - 2022-06-25
+### Fixed
+- Fix newlines in comments not being scoped.
+- Exclude prototype from string contexts.
+- Highlight `fulltext` attribute correctly.
+- General syntax cleanups.
+
+### Added
+- Configure scope based code folding.
+- Added some basic symbol tests for models.
