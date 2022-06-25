@@ -45,7 +45,7 @@ contexts:
 
   documentation_comment_body:
     - meta_scope: comment.block.documentation.prisma
-    - match: $
+    - match: $\n?
       pop: 1
 
   line_comment:
@@ -55,7 +55,7 @@ contexts:
 
   comment_body:
     - meta_scope: comment.line.prisma
-    - match: $
+    - match: $\n?
       pop: 1
 
   eol_pop_2:
